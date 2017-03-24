@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="Shikaku" height="500" /> 
+  <UserPref name="width" display_name="Width" default_value="10" datatype="enum">
+    <EnumValue value="10"/>
+    <EnumValue value="11"/>
+    <EnumValue value="12"/>
+    <EnumValue value="13"/>
+    <EnumValue value="14"/>
+    <EnumValue value="15"/>
+    <EnumValue value="16"/>
+    <EnumValue value="17"/>
+    <EnumValue value="18"/>
+    <EnumValue value="19"/>
+    <EnumValue value="20"/>
+  </UserPref>
+  <UserPref name="height" display_name="Height" default_value="10" datatype="enum">
+    <EnumValue value="10"/>
+    <EnumValue value="11"/>
+    <EnumValue value="12"/>
+    <EnumValue value="13"/>
+    <EnumValue value="14"/>
+    <EnumValue value="15"/>
+    <EnumValue value="16"/>
+    <EnumValue value="17"/>
+    <EnumValue value="18"/>
+    <EnumValue value="19"/>
+    <EnumValue value="20"/>
+  </UserPref>
+  <Content type="url" href="http://www.shikakuroom.com/puzzle.php"/>
+</Module>

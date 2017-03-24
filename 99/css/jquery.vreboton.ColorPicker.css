@@ -1,0 +1,14 @@
+#ColorPickerDiv {
+  display: block;
+  display: none;
+  position: relative;
+  border: 1px solid #000;
+  background: #000;
+}
+.ColorPickerDivSample {
+	margin: 0px 0px 0px 4px;
+	border: solid 1px #666;
+	padding: 0px 10px;	
+	position: relative;
+	cursor: pointer;
+}

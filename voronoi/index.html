@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <style type="text/css">
+
+        html, body, #map {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .stations {
+          position: absolute;
+        }
+        
+        .stations, .stations svg.aaa {
+          position: absolute;
+        }
+        
+        .stations border {
+          position: absolute;
+         stroke: black;
+         stroke-width: 2px;
+        }
+        
+        .stations svg.aaa {
+          width: 60px;
+          height: 20px;
+          padding-right: 100px;
+          font: 10px sans-serif;
+        }
+        
+        .stations circle {
+          fill: brown;
+          stroke: black;
+          stroke-width: 1.5px;
+        }
+
+
+path {
+  stroke: #000;
+}
+
+path:first-child {
+  fill: yellow !important;  
+  opacity:0.2;
+}
+
+circle {
+  fill: #fff;
+  stroke: #000;
+  pointer-events: none;
+}
+
+.PiYG .q0-9{fill:rgb(197,27,125)}
+.PiYG .q1-9{fill:rgb(222,119,174)}
+.PiYG .q2-9{fill:rgb(241,182,218)}
+.PiYG .q3-9{fill:rgb(253,224,239)}
+.PiYG .q4-9{fill:rgb(247,247,247)}
+.PiYG .q5-9{fill:rgb(230,245,208)}
+.PiYG .q6-9{fill:rgb(184,225,134)}
+.PiYG .q7-9{fill:rgb(127,188,65)}
+.PiYG .q8-9{fill:rgb(77,146,33)}
+        
+            </style>
+          </head>
+          <body>
+            <div id="map"></div>
+            <script type="text/javascript">
+        
+        // create map
+        var map = new google.maps.Map(d3.select("#map").node(), {
+          zoom: 9,
+          center: new google.maps.LatLng(51.21861, -0.16129),
+          mapTypeId: google.maps.MapTypeId.TERRAIN
+        });
+        
+        
+        var data = [
+{ name: 'Royal Surrey County Hospital', lng: -0.60747396945954, lat: 51.241035623607935 },
+{ name: 'Worthing Hospital', lng: -0.3643321990966, lat: 50.81676880598484 },
+{ name: 'East Surrey Hospital', lng: -0.1612996906042, lat: 51.21861664764796 },
+{ name: 'Sussex Eye Hospital', lng: -0.1176464781165, lat: 50.81881348373084 },
+{ name: 'Princess Royal Hospital', lng: -0.0910872220993, lat :50.991207283544155 },
+        ];
+        
+        
+        // Load the station data. When the data comes back, create an overlay.
+        var overlay = new google.maps.OverlayView();
+        
+        // Add the container when the overlay is added to the map.
+        overlay.onAdd = function() {
+          var layer = d3.select(this.getPanes().overlayLayer).append("div")
+                .attr("height", "100%")
+                .attr("width", "100%")
+                .attr("class", "stations")
+                .attr("id", "layer");
+          
+          layer[0][0].style.width = "1366px";
+          layer[0][0].parentNode.style.width = "100%";
+          layer[0][0].parentNode.style.height = "100%";
+          layer[0][0].parentNode.parentNode.style.width = "100%";
+          layer[0][0].parentNode.parentNode.style.height = "100%";
+          layer[0][0].parentNode.parentNode.parentNode.style.width = "100%";
+          layer[0][0].parentNode.parentNode.parentNode.style.height = "100%";
+          layer[0][0].parentNode.parentNode.parentNode.parentNode.style.width = "100%";
+          layer[0][0].parentNode.parentNode.parentNode.parentNode.style.height = "100%";
+          
+          // Draw each marker as a separate SVG element.
+          // We could use a single SVG, but what size would it have?
+          overlay.draw = function() {
+            var projection = this.getProjection(),
+                padding = 10;
+        
+            var marker = layer.selectAll("svg")
+                .data( data )
+                .each(transform) // update existing markers
+              .enter().append("svg:svg")
+                .each(transform)
+                .attr("class", "marker aaa")
+        
+            marker.append("svg:circle")
+                .attr("r", 4.5)
+                .attr("cx", padding )
+                .attr("cy", padding );
+        
+            // add a label.
+            marker.append("svg:text")
+                .attr("x", padding + 7)
+                .attr("y", padding)
+                .attr("dy", ".31em")
+                .text( function(d) { 
+                  return d.name; }
+                );
+        
+            var v = d3.geom.voronoi( translate(data) );
+            console.log( "v is :" );
+            console.log( v );
+            
+            var edges = layer.selectAll("path")
+                .data( v )
+              .enter().append("svg:svg").attr("width", "100%").attr("width","100%").style("position", "absolute")
+                .append("svg:path")
+                .attr( "d", function(d){
+                  var e = transform_path(d)
+                  var p = 'M' + e.join('L') + 'Z'
+                  console.log( 'PATH: ' + p)
+                  return p
+                }).attr("fill", "none").attr("stroke", "black")
+                ;
+
+            function translate(data) {
+              var d = []
+              for( var i=0; i<data.length; i++){
+                var c = [ data[i].lat, data[i].lng ]
+                d.push( c )
+              }
+              return d
+            }
+        
+            function _projection( lat, lng ) {
+              e = new google.maps.LatLng( lat, lng );
+              e = projection.fromLatLngToDivPixel(e);
+              return [ e.x - padding, e.y - padding]
+              // return [ e.x, e.y ]
+            }
+        
+            function transform(d) {
+              e = _projection( d.lat, d.lng )
+              console.log("marker " + d.lat +', ' + d.lng + " -> left: " + e[0] +", top: " + e[1] )
+              return d3.select(this)
+                  .style("left", e[0] + "px")
+                  .style("top", e[1] + "px");
+            }
+        
+            function transform_path(data) {
+              var d = []
+              console.log(data)
+              for( var i=0; i<data.length; i++) {
+                var c = _projection( data[i][0], data[i][1] )
+                console.log( ' path point: ' + JSON.stringify(data[i]) + ' -> left: ' + c[0] + ", top: " + c[1])
+                d.push( c )
+              }
+              // console.log(d)
+              return d
+            }
+            
+          };
+        };
+        
+        // Bind our overlay to the map.
+        overlay.setMap(map);
+        
+    </script>
+  </body>
+</html>

@@ -1,0 +1,310 @@
+/* fixes for align */
+html, body { height: 100%; }
+/* ... i hate I-bar cursors in non-input areas */
+body, td, tr, font, table, img { cursor: default; }
+
+/* -- set base css for cross-browser design -- */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, /* table, caption, tbody, tfoot, thead, tr, th, td, */
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}                  
+
+body { font:13px/1.231 sans-serif; *font-size:small; }
+select, input, textarea, button { font:99% sans-serif; }
+
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+table { border-collapse:collapse; border-spacing:0; }
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+input, select { vertical-align:middle; }
+html { overflow-y: scroll; } /* force non-IE to show scrollbar */
+a:hover, a:active { outline: none; }
+small { font-size: 85%; }
+/* td, td img { vertical-align: top; } */
+textarea { overflow: auto; } 
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+button, input, select, textarea { margin: 0; }
+
+/* highlight color */
+::-moz-selection{ background-color: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background-color:#FF5E99; color:#fff; text-shadow: none; }
+a:link { -webkit-tap-highlight-color: #FF5E99; } 
+
+/* -- end of cross-broswer stuff -- */
+
+
+body {
+	background: #000;
+	color: #fff;
+}
+
+#app {
+  width: 100%;
+  display: fixed;
+}
+
+.blink { text-decoration: blink; }
+.disabledprefix { vertical-align: super; font-size: x-small; }
+.hidden { display: none; visibility: hidden; }
+.controlLink { text-decoration: underline; display: inline; cursor: pointer; }
+
+/* short hand for setting up div tables */
+.table { display: table; }
+.td { display: table-cell; }
+.tr { display: table-row; }
+
+/* outer container for each room */
+.roomcontainer {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+/* history room container */
+.historycontainer {
+  min-width: 300px;
+  min-height: 300px;
+  overflow: auto;
+}
+
+
+/* left hand user list/buttons */
+.menubar {
+	width: 15%;
+	min-width: 160px;
+	max-width: 200px;
+  vertical-align: top;
+}
+
+.buttoncontainer {
+  padding: 5px;
+}
+
+button.app {
+  background: #ccc;
+  color: black;
+  display: inline-block;
+  padding: 2px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  cursor: pointer;
+  margin: 2px;
+  font-size: 12px;
+  font-weight: normal;
+  border: 1px solid;
+}
+button.app:hover {
+  background: #eee;
+}
+button.app:active {
+  background: #aaa;
+}
+
+/* room and name inputs */
+.roombar, .namebar {
+  font-size: 11px;
+  text-align: right;
+}
+.roombox, .namebox {
+  width: 100px;
+  height: 12px;
+  font-size: 11px;
+  margin: 0 5px 0 2px;
+  padding: 2px 3px 2px 3px;
+  border: 1px solid #333;  
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+
+/* user list and room list, and items in them */
+
+.userlist, .roomlist {
+  font-size: 11px;
+  border-top: 1px solid #666;
+  padding: 10px;
+}
+
+.user, .room {
+  cursor: pointer;
+}
+
+.user:hover, .room:hover {
+  background: white;
+  color: black;
+}
+
+.user {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.flagwrap {
+  display: inline-block;
+  background-color: black;
+  height: 100%;
+}
+.user .flag {
+	vertical-align: bottom;
+	background-color: white; /* Nepal's flag is transparent */
+	cursor: pointer;
+	width: 18px;
+	height: 12px;
+}
+.user .id {
+  font-family: monospace;
+  color: yellow;
+  margin: 0 2px 0 2px;
+}
+.user:hover .id, .user:hover .name {
+  color: black;
+}
+
+
+/* Entire right section of the screen with msgbox & posts */
+.mainarea, .maintable {
+  height: 100%;
+  width: 100%;
+  vertical-align: top;
+}
+
+/* Right top area with msgbox and buttons above posts */
+.inputbar {
+  padding: 5px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+/* Message box */
+.msgboxlbl {
+  font-size: 70%;
+}
+.msgbox {
+  width: 70%;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+/* Main area below message box (area with posts) */
+.postarea {
+  width: 100%;
+  height: 100%;
+}
+
+/* Section for docking youtube/whatever right of posts */
+.dockarea {
+  height: 100%;
+  vertical-align: top;
+  display: none;
+}
+
+
+.post {
+  width: 100%;
+  border-collapse: collapse;
+	min-height: 10px;
+}
+
+/* fix for tags that don't specify table align */
+.post table { text-align: left; }
+
+
+.namecell {
+  width: 25%;
+  text-align: right;
+	max-width: 100%;
+	padding: 2px 10px 2px 0px;
+  cursor: pointer;
+}
+.textcell {
+  text-align: left;
+	padding: 2px 0px 2px 10px;
+}
+
+
+.post a {
+  color: inherit;
+}
+.post a img {
+  border: none;
+}
+.post img {
+  cursor: pointer;
+  display: block;
+}
+
+.deletedPostImage {
+  display: inline-block;
+  margin: 0px 4px 0px 4px;
+  cursor: pointer;
+}
+.deletedPostImage:hover {
+  text-decoration: underline;
+}
+
+
+/* youtube div */
+.ytMedia {
+  font-size: 12px;
+  display: block;
+  font-family: sans-serif;
+  position: relative;
+  max-width: 225px;
+  text-align: left;
+}
+.ytMedia a { outline: none; }
+/* parts of youtube div */
+.ytTitle, .ytPreview, .ytStars { cursor: pointer; }
+.ytTitle { display: block; text-decoration: underline; }
+
+.pmprefix {
+  font-weight: bold;
+  font-size: large;
+}
+.pmtarget { }
+
+.doodleroom, .camroom { width: 600px; height: 500px; }
+.globe { margin: 0px; padding: 0px; vertical-align: bottom; cursor: pointer; }
+
+/* user menu popup */
+.usermenu {  }
+.usermenutitle { }
+.usermenuitem {
+  font-size: 80%;
+  cursor: pointer;
+}
+.usermenuitem:hover {
+  background-color: white;
+  color: black;
+}
+
+/* app settings popup */
+.appSettingsContainer {
+  font-size: 12px;
+  padding: 5px;
+  text-align: right;
+}
+
+/* tag editor */
+.teContainer { width: 600px; }
+.teSaveBar { vertical-align: top; text-align: left; }
+.teCodeBox { display: inline; width: 98%; font-size: 12px; resize: vertical; height: 150px; }
+.tePreview { height: 80px; background-color: white; padding: 10px 2px 10px 2px; margin:10px 0 10px 0; vertical-align: middle;}
+.teColorBox { display: inline-block; width: 80px; }
+.teColorFieldset { text-align: right; }
+.teNameFieldset, .teTextFieldset, .teColorFieldset { margin: 5px; border: 1px solid #ddd; padding: 5px; font-size: 12px; width: auto; display: inline-block; }

@@ -1,0 +1,122 @@
+.sexybutton {
+	display: inline-block;
+	padding: 5px 10px 6px;
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 1;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+}
+
+* {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+html {
+	MARGIN-BOTTOM: 1px; HEIGHT: 100%
+}
+body {
+	background-image:url(background.jpg); background-position: top center; background-repeat: repeat-y; FONT: 15px "calibri", tahoma, arial, sans-serif; HEIGHT: 100%;text-align:center; text-align:center; background-color:white;
+}
+form {
+	HEIGHT: 100%
+}
+img {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.outerBlock{
+	background-image:url(topbar.png);
+	background-position: top center;
+	background-repeat: no-repeat; 
+	text-align:center;
+}
+.containingBlock {
+	text-ALIGN: center;
+	HEIGHT:100%; 
+	WIDTH: 810px;
+	width:810px;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:0px;
+	padding:0px;
+	text-align:left;
+}
+.headBlock {
+	HEIGHT: 85px;
+	WIDTH:410px;
+	text-ALIGN:LEFT;
+	vertical-align:top;
+}
+.headBlock2 {
+	HEIGHT: 55px;
+	WIDTH:810px;
+	text-ALIGN:LEFT;
+	vertical-align:top;
+}
+.searchBlock {
+	HEIGHT: 77px;
+	WIDTH: 400px;
+	text-ALIGN: right;
+	vertical-align:middle;
+}
+.SearchP{
+	line-height:5em;
+}
+.title {
+	font-size:15px;
+	text-decoration:none;
+	display:inline;
+}
+.title1 {
+	font-size:36px;
+	font-weight:bold;
+	color:#0066FF
+}
+.title2 {
+	font-size:36px;
+	font-weight:bold;
+	color:#000066
+}
+.topNav {
+	font-size:14px;
+	color:#000;
+	HEIGHT: 30px;
+}
+.footerBlock {
+	text-align:center;
+}
+a:hover {
+	text-decoration: underline!important; color: #101010;
+}
+a {display: inline}
+a:link, a:visited {
+	text-decoration: none; color: #000
+}
+
+.displayTd {
+	border-width: 1px;padding: 5px;border-style: solid;border-color: #bdbcd8; background-color: white;color:#444444;
+}
+.hoverDiv {
+	position:relative;
+	top:-15px;
+	display:inline;
+	font-size:17px;
+	font-style:italic;
+	background-color:#FFF;
+	color:#818598;
+	font-weight:100;
+	padding-left:10px;
+	padding-right:10px;
+}
+.bodytext{
+	font-style:normal;
+	font-size:15px;
+	background-color:#FFF;
+	font-weight:100;
+}

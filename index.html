@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=450,user-scalable=0">
+<meta name="verify-v1" content="wKp9zPD3Cb7v7S5RbmXsHBfFukmqGBxwW7jcs8YuK74=" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>The Shikaku Room</title>
+	<link href="layout2.css" type="text/css" rel="stylesheet" />
+    <link rel="shortcut icon" href="http://www.shikakuroom.com/favicon.ico" />
+    <script type="text/javascript">
+//<![CDATA[
+	function fiddlesticks(){
+		height=document.getElementById("height").value;
+		width=document.getElementById("width").value;
+		document.getElementById("shikaku").innerHTML="<iframe id='iframe' src='puzzle.php?height="+height+"&width="+width+"' style='border: 0px solid #ffffff;width:800px;height:800px' scrolling='no' frameborder='0' onload='if (window.parent && window.parent.autoIframe) {window.parent.autoIframe(\"iframe\");}'></iframe>";
+	}
+	function fiddlesticks2(){
+		height=document.getElementById("height").value;
+		width=document.getElementById("width").value;
+		document.getElementById("shikaku").innerHTML="<iframe id='iframe' src='puzzle.php?height="+height+"&width="+width+"&Create=1' style='border: 0px solid #ffffff;width:800px;height:800px' scrolling='no' frameborder='0' onload='if (window.parent && window.parent.autoIframe) {window.parent.autoIframe(\"iframe\");}'></iframe>";
+	}
+	function autoIframe(frameId){
+		try{
+			frame = document.getElementById(frameId);
+			innerDoc = (frame.contentDocument) ? frame.contentDocument : frame.contentWindow.document;
+			objToResize = (frame.style) ? frame.style : frame;
+			objToResize.style.height = innerDoc.body.scrollHeight + 10;
+		}
+		catch(err){
+			window.status = err.message;
+		}
+	}
+//]]>
+	</script>
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2583579-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+-->
+</head>
+
+<body class="tehbody" id="bodyid">
+<table class="outerBlock" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td class="outerBlock" width="100%" align="center">
+	<div class="containingBlock">
+	<table width="810" border="0" cellpadding="0" cellspacing="0" class="desktoponly">
+		<tr>
+			<td width="410" valign="top" class="headBlock" align="left">
+				<font class="title1" ><a href="index.html"><img src="bar_logo_dark_75.png"  style="display:inline; margin-top:3px" align="top" alt="bar logo" /></a></font></td>
+			<td width="400" align="right" class="searchBlock" valign="middle">
+			<p class="SearchP">&nbsp;</p>			</td>
+		</tr>
+		<tr>
+		  <td colspan="2" align="center" style="text-align:center" valign="middle" class="headBlock2">
+		  				<img src="spacer.png" align="left" style="display:inline" alt=" " />
+		  				<a href="index.html"><img src="home_on.png" align="left" style="display:inline" alt="home" /></a><a href="how.html"><img src="how.png" align="left" style="display:inline" alt="How To Play" /></a>
+						<a href="contact.html"><img src="contact.png" align="left" style="display:inline" alt="contact" /></a>
+						<a href="faq.html"><img src="faq.png" align="left" style="display:inline" alt="faq" /></a>		  </td>
+		</tr>
+  	</table>
+<center class="mobileonly"> 
+<h1> <img src='blue_art_room_logo_350px.jpg' alt="The Shikaku Room" /></h1>
+</center>
+<table width="100%" border="0" cellspacing="10" cellpadding="10" class="desktoponly" >
+  <tr>
+    <td width="50%" class="displayTd" valign="top" align="center">
+		<center>
+        <h2 class="hoverDiv">What&nbsp;to&nbsp;do</h2>
+		</center>
+		<p>Shikaku is normally played on a rectangular grid. Some of the squares in the  grid are numbered. The objective is to divide the grid into rectangular and square sections such that each section contains exactly one number, that number representing the area of the rectangle or square. Hit "Go" or "Create your own" below to play (click and drag to draw a section).</p>
+		<p align="center" class="bodytext">&nbsp;</p>
+	</td>
+    <td width="50%" class="displayTd" valign="top" align="center"><center>
+                    <h2 class="hoverDiv">About&nbsp;Shikaku</h2>
+                  </center>
+      Shikaku was invented by the Japanese publisher Nikoli. There are a few different methods that are useful in solving a shikaku puzzle. For hints on how to play and solve puzzles have a look at <a href="how.html">How To Play</a>. I also explain how my solver works in the <a href="faq.html">FAQ</a>, so check that out as well.  I would  appreciate any <a href="contact.html">feedback</a>. Have fun :)</td>
+		  </tr>
+		</table>
+		<table width="100%" cellspacing="10" cellpadding="10" class="mobileonly">
+			<tr>
+				<td class="displayTd" valign="top" align="center"><center class="desktoponly">
+                    <h2 class="hoverDiv" onclick="javascript:fiddlesticks()">New&nbsp;Puzzle</h2>
+                  </center>
+					<form action="javascript:fiddlesticks()" id="form1" name="form1" method="post" style="width:250px;">
+                                        <label>width
+                                        <select name="width" id="width">
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5</option>
+                                          <option value="6">6</option>
+                                          <option value="7">7</option>
+                                          <option value="8">8</option>
+                                          <option value="9">9</option>
+                                          <option value="10" selected="selected">10</option>
+                                          <option value="11">11</option>
+                                          <option value="12">12</option>
+                                          <option value="13">13</option>
+                                          <option value="14">14</option>
+                                          <option value="15">15</option>
+                                          <option value="16">16</option>
+                                          <option value="17">17</option>
+                                          <option value="18">18</option>
+                                          <option value="19">19</option>
+                                          <option value="20">20</option>
+                                        </select>
+                                        </label>
+                                        <label>height
+                                        <select name="height" id="height">
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5</option>
+                                          <option value="6">6</option>
+                                          <option value="7">7</option>
+                                          <option value="8">8</option>
+                                          <option value="9">9</option>
+                                          <option value="10" selected="selected">10</option>
+                                          <option value="11">11</option>
+                                          <option value="12">12</option>
+                                          <option value="13">13</option>
+                                          <option value="14">14</option>
+                                          <option value="15">15</option>
+                                          <option value="16">16</option>
+                                          <option value="17">17</option>
+                                          <option value="18">18</option>
+                                          <option value="19">19</option>
+                                          <option value="20">20</option>
+                                        </select>
+                                        </label>
+                                        <input class="sexybutton" type="submit" value="Generate" name="Generate" />
+                                        <button class="sexybutton" onclick="fiddlesticks2()" type="button">Create your own</button>
+
+					</form>
+                    <p id="shikaku">
+					</p>
+					</td>
+			</tr>
+		</table>
+		<table width="100%" class="footerBlock">
+			<tr>
+				<td width="100%" align="center"><a href="terms.html">Terms of Use</a> | <a href="help.html">Help</a> | <a href="contact.html">Contact</a></td>
+		  </tr>
+		</table>
+	</div>
+</td>
+</tr>
+</table>
+</body>
+</html>
+

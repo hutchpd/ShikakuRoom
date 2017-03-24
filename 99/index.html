@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+  <title>Chat - Free HTML Based Chat Site, Free chat rooms for Adults, Singles and Teens - 99.com</title>
+
+  <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" />
+
+  	<meta name="description" content="This is a free HTML based Chat site.
+
+  	 Chat - HTML Chat, Advanced Chat, chat, chatrooms, free chat site, music chat, html enabled, realtime chat, real time, real-time, youtube, hyper text markup language chat room. Free chat rooms including: adult chat rooms, teen chat rooms, college chat, singles chat, sports chat, video games chat, music chat, general chat, and gay chat.  Includes chat etiquette, smileys, abbreviations, dating advice." />
+
+	<meta name="robots" content="index, follow" />
+
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+<link rel="stylesheet" type="text/css" href="css/notify.css" />
+
+<link rel="stylesheet" type="text/css" href="css/jquery.vreboton.ColorPicker.css" />
+
+<script type="text/javascript" src="defaults.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+<div id="app"></div>
+
+
+
+<script type="text/javascript">
+
+var firstLoad=1;
+
+var is_inCall=0;
+
+var set_UserID = '3383';
+
+// usage: log('inside coolFunc',this,arguments);
+
+// http://paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
+
+window.log = function(){
+
+  if( go_defaults.mb_debug ) {
+
+    log.history = log.history || [];
+
+    log.history.push(arguments);
+
+    if(this.console){
+
+      console.log( Array.prototype.slice.call(arguments) );
+
+    }
+
+  }
+
+};
+
+// To make classes/code optional, default them to null
+
+var go_extras = null;
+
+var go_translator = null;
+
+var go_99only = null;
+
+
+
+</script>
+
+
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="script00.js"></script>
+
+<!-- 99only code goes last, it extends existing code -->
+
+<script type="text/javascript" src="99only.js" charset="ISO-8859-1"></script>
+
+
+
+<script type="text/javascript">
+
+
+
+// This isn't needed since no other $ libraries are used
+
+//    but I prefer to avoid conflicts...
+
+jQuery.ajaxSetup( { crossDomain: true } );
+
+jQuery.noConflict();
+
+
+
+
+
+jQuery(document).ready(function(){
+
+
+
+  try {
+
+    go_app.init();
+
+  } catch( err ) {
+
+    log( 'Init: ' + err.message );
+
+    throw err;
+
+  }
+
+
+
+});
+
+
+
+// Global onKeyPress is purely for IE support,
+
+//   without this IE will automatically trigger/press
+
+//   the first button on the screen when users hit enter
+
+function onKeyPress(e) {
+
+  e = e || window.event;
+
+  var ls_keyCode = e.keyCode||e.which;
+
+  switch( ls_keyCode ) {
+
+    case 13:
+
+      go_browserUtils.stopProp(e);
+
+      return false;
+
+  }
+
+  return true;
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
+
