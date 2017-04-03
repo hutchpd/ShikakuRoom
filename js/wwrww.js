@@ -3,7 +3,7 @@
     console.log('Loaded /r/place Cooridination Script');
     $.ajaxSetup({ cache: false });
     var getData = function(action) {
-        $.getJSON('https://raw.githubusercontent.com/hutchpd/ShikakuRoom/master/wwrww.json', function(data) {
+        $.getJSON('https://raw.githubusercontent.com/hutchpd/ShikakuRoom/master/js/wwrww.json', function(data) {
             action(data);
         });
     },
